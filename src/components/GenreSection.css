@@ -1,0 +1,62 @@
+.genre-section {
+  padding: 20px 40px;
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e1ecee;
+  margin-bottom: 20px;
+}
+
+/* Horizontal scroll container */
+.genre-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbar (Chrome, Safari) */
+.genre-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar (Firefox) */
+.genre-scroll {
+  scrollbar-width: none;
+}
+
+/* Smooth hover effect for cards */
+.genre-scroll > * {
+  min-width: 250px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.genre-scroll > *:hover {
+  transform: scale(1.05);
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.view-more-btn {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.view-more-btn:hover {
+  color: #ffffff;
+}

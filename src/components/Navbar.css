@@ -1,0 +1,132 @@
+.navbar {
+  height: 70px;
+  background-color: #070c0d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logo span {
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.search-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 360px;
+  padding: 10px 20px;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-input:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #ffd700;
+}
+
+.genre-dropdown {
+  background-color: #111;
+  color: white;
+  border: 1px solid #333;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+  appearance: none;
+}
+
+.genre-dropdown:hover {
+  border-color: #ffd700;
+}
+
+.genre-dropdown:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 1000px) {
+  .search-input {
+    width: 250px;
+  }
+
+  .nav-right {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    display: none;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+}
