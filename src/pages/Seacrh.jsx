@@ -16,7 +16,6 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const [fade, setFade] = useState(false);
 
-  // Sync page state with URL
   useEffect(() => {
     setPage(pageParam);
   }, [pageParam]);
@@ -32,7 +31,7 @@ const Search = () => {
 
       setTimeout(() => {
         setMovies(data.results);
-        setTotalPages(data.total_pages);
+        setTotalPages(Math.min(data.total_pages, 50));
         setLoading(false);
         setFade(false);
 
@@ -51,19 +50,15 @@ const Search = () => {
   };
 
   const nextPage = () => {
-    if (page < totalPages) {
-      goToPage(page + 1);
-    }
+    if (page < totalPages) goToPage(page + 1);
   };
 
   const prevPage = () => {
-    if (page > 1) {
-      goToPage(page - 1);
-    }
+    if (page > 1) goToPage(page - 1);
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div className="min-h-screen bg-[#0b0b0b] text-white p-6">
       <h1 className="text-3xl font-bold mb-8">Results for "{query}"</h1>
 
       {/* Movies Grid */}
@@ -76,7 +71,7 @@ const Search = () => {
           ? Array.from({ length: 8 }).map((_, i) => (
               <div
                 key={i}
-                className="h-72 bg-gray-800 rounded-lg animate-pulse"
+                className="h-72 bg-[#1a1a1a] rounded-lg animate-pulse"
               />
             ))
           : movies.map(movie => (
@@ -97,10 +92,10 @@ const Search = () => {
           <button
             onClick={prevPage}
             disabled={page === 1}
-            className="px-3 py-2 rounded-md bg-gray-800 text-gray-300 
-                       hover:bg-gray-700 disabled:opacity-40 transition"
+            className="px-4 py-2 rounded-md bg-[#1a1a1a] text-white border border-[#333]
+                       hover:bg-[#ffd700] hover:text-black transition disabled:opacity-40"
           >
-            Previous
+            Prev
           </button>
 
           {/* Page Numbers */}
@@ -113,8 +108,8 @@ const Search = () => {
                 className={`px-4 py-2 rounded-md text-sm font-medium transition
                   ${
                     page === number
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      ? 'bg-[#ffd700] text-black'
+                      : 'bg-[#1a1a1a] text-white border border-[#333] hover:bg-[#ffd700] hover:text-black'
                   }`}
               >
                 {number}
@@ -125,8 +120,8 @@ const Search = () => {
           <button
             onClick={nextPage}
             disabled={page === totalPages}
-            className="px-3 py-2 rounded-md bg-gray-800 text-gray-300 
-                       hover:bg-gray-700 disabled:opacity-40 transition"
+            className="px-4 py-2 rounded-md bg-[#1a1a1a] text-white border border-[#333]
+                       hover:bg-[#ffd700] hover:text-black transition disabled:opacity-40"
           >
             Next
           </button>

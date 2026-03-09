@@ -110,7 +110,31 @@
   border-color: #ffd700;
   box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
 }
+.search-container {
+  position: relative;
+}
 
+.suggestions {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  background: #1f2937;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  border-bottom: 1px solid #374151;
+}
+
+.suggestion-item:hover {
+  background: #374151;
+}
 @media (max-width: 1000px) {
   .search-input {
     width: 250px;
