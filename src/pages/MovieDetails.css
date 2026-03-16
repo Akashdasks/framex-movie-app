@@ -108,22 +108,50 @@
 .trailer-btn {
   margin-top: 25px;
   padding: 12px 30px;
-  background-color: #ffc107;
-  border: none;
+  background: transparent;
+  border: 2px solid #ffc107;
   border-radius: 50px;
-  color: black;
+  color: #ffc107;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .trailer-btn:hover {
-  background-color: #ffd700;
+  background: rgba(255, 193, 7, 0.15);
   transform: scale(1.05);
 }
 
 .trailer-btn:active {
   transform: scale(0.95);
+}
+
+.watchlist-btn {
+  background: transparent;
+  border: 2px solid #ffc107;
+  color: #ffc107;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: all 0.3s ease;
+}
+
+.watchlist-btn:hover {
+  background: rgba(255, 193, 7, 0.15);
+  transform: scale(1.05);
+}
+
+.watchlist-btn:active {
+  transform: scale(0.95);
+}
+
+.watchlist-btn.in-watchlist {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+  color: #ffc107;
 }
 
 .loading-container {

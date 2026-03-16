@@ -108,6 +108,9 @@ const Navbar = () => {
         <NavLink to="/top-rated" className="nav-link">
           Top Rated
         </NavLink>
+        <NavLink to="/watchlist" className="nav-link">
+          Watchlist
+        </NavLink>
 
         <select
           className="genre-dropdown"

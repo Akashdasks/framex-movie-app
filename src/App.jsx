@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import Search from './pages/Seacrh';
 import MovieDetails from './pages/MovieDetails';
 import CategoryPage from './pages/CategoryPage';
+import Watchlist from './pages/Watchlist';
+
 import './App.css';
 
 const App = () => {
@@ -19,6 +21,7 @@ const App = () => {
         <Route path="/top-rated" element={<CategoryPage />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/genre/:genreId" element={<CategoryPage />} />
+        <Route path="/watchlist" element={<Watchlist />} />
       </Routes>
     </>
   );

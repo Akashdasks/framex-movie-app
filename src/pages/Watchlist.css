@@ -1,0 +1,98 @@
+.watchlist-page {
+  padding: 100px 40px 40px;
+  min-height: 100vh;
+  background: #070c0d;
+  color: #fff;
+}
+
+.watchlist-page h1 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  color: #ffc107;
+}
+
+.watchlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 24px;
+}
+
+.watchlist-card img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.watchlist-card img:hover {
+  transform: scale(1.04);
+}
+
+.watchlist-card-info {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.watchlist-card-info h3 {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #fff;
+}
+
+.watchlist-card-info span {
+  color: #ffc107;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.watchlist-card-info button {
+  background: #ffc107;
+  border: none;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.watchlist-card-info button:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+.watchlist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #070c0d;
+  color: #fff;
+  gap: 20px;
+}
+
+.watchlist-empty h2 {
+  font-size: 1.5rem;
+  color: #cfcfcf;
+}
+
+.watchlist-empty button {
+  background: #ffc107;
+  border: none;
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.watchlist-empty button:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}

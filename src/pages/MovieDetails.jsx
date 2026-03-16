@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails, getMovieTrailer } from '../Services/tmbd';
 import TrailerModal from '../components/TrailerModal';
+import { useWatchlist } from '../context/WatchlistContext';
 import './MovieDetails.css';
 
 const MovieDetails = () => {
@@ -10,6 +11,8 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(true);
   const [videoKey, setVideoKey] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const { isInWatchlist, addToWatchlist, removeFromWatchlist } = useWatchlist();
+  const inWatchlist = movie ? isInWatchlist(movie.id) : false;
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -28,6 +31,19 @@ const MovieDetails = () => {
     if (key) {
       setVideoKey(key);
       setShowModal(true);
+    }
+  };
+  const handleWatchlist = () => {
+    if (isInWatchlist(movie.id)) {
+      removeFromWatchlist(movie.id);
+    } else {
+      addToWatchlist({
+        id: movie.id,
+        title: movie.title,
+        poster_path: movie.poster_path,
+        vote_average: movie.vote_average,
+        release_date: movie.release_date,
+      });
     }
   };
 
@@ -88,6 +104,12 @@ const MovieDetails = () => {
 
             <button className="trailer-btn" onClick={handleTrailer}>
               ▶ Watch Trailer
+            </button>
+            <button
+              className={`watchlist-btn ${inWatchlist ? 'in-watchlist' : ''}`}
+              onClick={handleWatchlist}
+            >
+              {inWatchlist ? '✓ In Watchlist' : '+ Add to Watchlist'}
             </button>
           </div>
         </div>
